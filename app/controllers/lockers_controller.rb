@@ -14,9 +14,10 @@ class LockersController < ApplicationController
   end
 
   def create
-    @locker = Locker.new(locker_params)
-    if @locker.save
-      redirect_to locker_path
+    @locker= Locker.new(locker_params)
+    @locker.photo = @locker.get_photo
+    if @locker.save # => false / true
+      redirect_to lockers_path, notice: 'Locker was successfully created.'
     else
       render :new
       puts @locker.errors.messages
@@ -45,8 +46,8 @@ class LockersController < ApplicationController
   private
 
   def locker_params
-    params.require(:locker).permit(:size, :address, :price)
-  end
+    params.require(:locker).permit(:size, :price, :address, :photo)
+end
 
   def set_locker
     @locker = Locker.find(params[:id])

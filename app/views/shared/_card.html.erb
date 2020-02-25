@@ -1,6 +1,6 @@
  <div class="cards">
   <% @lockers.each do |locker| %>
-<div class="card-category" id="small-locker" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.3dlockers.co.uk/_assets/img/site/products/large/1000-high-security-cupboard.jpg)">
+<div class="card-category" id="small-locker" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= locker.photo %>)">
     <%= locker.size %>
     <%= locker.price %>
     <%= locker.address %>
