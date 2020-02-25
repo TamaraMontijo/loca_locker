@@ -16,6 +16,7 @@ class LockersController < ApplicationController
   def create
     @locker= Locker.new(locker_params)
     @locker.photo = @locker.get_photo
+    @locker.user = current_user
     if @locker.save # => false / true
       redirect_to lockers_path, notice: 'Locker was successfully created.'
     else
