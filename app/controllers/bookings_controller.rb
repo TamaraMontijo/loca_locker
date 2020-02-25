@@ -4,14 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @booking = Booking.new
-  end
-
-  def create
-    @booking
-  end
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -32,12 +24,12 @@ class BookingsController < ApplicationController
   end
 
  def create
+    @locker = Locker.find(params[:locker_id])
     @booking = Booking.new(booking_params)
-    @locker = Locker.find(params[:user_id])
     @booking.locker = @locker
 
     if @booking.save
-      redirect_to @locker
+      redirect_to @bookings
     else
       render 'lockers/show'
     end
@@ -46,6 +38,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :locker_id)
   end
 end
