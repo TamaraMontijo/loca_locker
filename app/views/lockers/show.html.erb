@@ -1,1 +1,55 @@
+<div class="container" id="show">
+  <div class="row">
+    <div class="col">
+      <div class="card" style="width: 100%;">
+        <img src="https://source.unsplash.com/8528gpeukK8" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Lockers Title</h5>
+          <p class="card-text">Locker Description</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email-address">Email Address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="hours-required">Hours Required</label>
+          <select class="form-control" id="hours">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time-required">Date & Time</label>
+            <input class="form-control" type="time-and-date" value="2011-08-19T13:45:00" id="time">
+          </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary">Reserve</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" id="show-map">
+    <div class="col">
+      <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="538" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
