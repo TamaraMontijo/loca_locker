@@ -12,18 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2020_02_25_144214) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
     t.bigint "locker_id"
     t.bigint "user_id"
     t.date "start_date"
     t.date "end_date"
     t.index ["locker_id"], name: "index_bookings_on_locker_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+
   end
 
   create_table "lockers", force: :cascade do |t|
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_25_144214) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_lockers_on_user_id"
   end
 
