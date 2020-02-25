@@ -34,6 +34,14 @@ class LockersController < ApplicationController
     end
   end
 
+  def destroy
+    if @locker.destroy
+      redirect_to locker_path, notice: "Flat was successfully destroyed"
+    else
+      puts @locker.errors.messages
+    end
+  end
+
   private
 
   def locker_params
