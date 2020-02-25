@@ -7,6 +7,7 @@ class LockersController < ApplicationController
 
   def show
     @locker = Locker.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

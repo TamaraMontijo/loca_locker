@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
    def update
     @booking.update(restaurant_params)
 
-    redirect_to @booking
+    redirect_to @bookings
   end
 
   def destroy
