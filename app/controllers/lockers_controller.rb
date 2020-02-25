@@ -12,7 +12,7 @@ class LockersController < ApplicationController
   def new
     @locker = Locker.new
   end
-aceita ai
+
   def create
     @locker= Locker.new(locker_params)
     @locker.photo = @locker.get_photo
