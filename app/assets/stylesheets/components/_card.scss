@@ -18,8 +18,9 @@
 }
 
 #small-locker {
-  background-size: 363px 340px;
-
+  background-size: 363px;
+  // background-repeat: no-repeat;
+  background-size: contain, cover;
 }
 
 .cards a:hover {
