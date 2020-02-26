@@ -2,7 +2,7 @@ class LockersController < ApplicationController
   before_action :set_locker, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lockers = Locker.all
+    @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def show
