@@ -1,13 +1,14 @@
 class LockersController < ApplicationController
-  #before_action :set_locker, only: [:show, :edit, :update, :destroy]
+  before_action :set_locker, only: [:show, :edit, :update, :destroy]
 
   def index
     @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def show
-    # @locker = Locker.find(params[:id])
-    # @booking = Booking.new
+    @locker = Locker.find(params[:id])
+    @booking = Booking.new
+    authorize @locker
   end
 
   def new
@@ -29,9 +30,11 @@ class LockersController < ApplicationController
   end
 
   def edit
+    authorize @locker
   end
 
   def update
+    authorize @locker
     if @locker.update(locker_params)
       redirect_to locker_path(@locker)
     else
