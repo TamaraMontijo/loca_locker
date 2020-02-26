@@ -1,7 +1,11 @@
 <div class="container">
-  <h1>My Bookings</h1>
-  <% @bookings.each do |booking| %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <% end %>
+  <div class="card">
+    <h1>My Bookings</h1>
+    <ul>
+      <% @bookings.each do |booking| %>
+      <li><%= booking.start_date %>
+      <%= booking.end_date %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
