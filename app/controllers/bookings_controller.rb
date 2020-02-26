@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-   def update
+  def update
     @booking.update(restaurant_params)
 
     redirect_to @bookings
