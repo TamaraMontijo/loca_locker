@@ -1,1 +1,7 @@
-<h1>hey</h1>
+<div class="container">
+  <h1>My Bookings</h1>
+  <% @bookings.each do |booking| %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <% end %>
+</div>
