@@ -7,7 +7,7 @@ class Locker < ApplicationRecord
 
   def get_photo
     if size == 'S'
-      photo = "https://www.3dlockers.co.uk/_assets/img/site/products/large/1000-high-security-cupboard.jpg"
+      photo = "https://www.3dlockers.co.uk/_assets/img/site/products/large/3-door.jpg"
     elsif size == 'M'
       photo = "https://www.3dlockers.co.uk/_assets/img/site/products/large/small-chemical-coshh-cabinet-900-x-460-x-460.jpg"
     else
