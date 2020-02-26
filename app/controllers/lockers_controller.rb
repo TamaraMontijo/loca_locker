@@ -1,23 +1,25 @@
 class LockersController < ApplicationController
-  before_action :set_locker, only: [:show, :edit, :update, :destroy]
+  #before_action :set_locker, only: [:show, :edit, :update, :destroy]
 
   def index
     @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def show
-    @locker = Locker.find(params[:id])
-    @booking = Booking.new
+    # @locker = Locker.find(params[:id])
+    # @booking = Booking.new
   end
 
   def new
-    @locker = Locker.new
+    @locker = current_user.lockers.new
+    authorize @locker
   end
 
   def create
-    @locker= Locker.new(locker_params)
+    @locker = current_user.lockers.new(locker_params)
     @locker.photo = @locker.get_photo
     @locker.user = current_user
+    authorize @locker
     if @locker.save # => false / true
       redirect_to lockers_path, notice: 'Locker was successfully created.'
     else
