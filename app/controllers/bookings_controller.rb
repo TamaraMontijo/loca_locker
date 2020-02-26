@@ -2,23 +2,28 @@
 
   def index
     @bookings = Booking.all
+    @bookings = policy_scope(Booking).order(created_at: :desc)
   end
 
   def show
     @booking = Booking.find(booking_params)
+    authorize @booking
   end
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
+    authorize @booking
     @booking.update(restaurant_params)
 
     redirect_to @bookings
   end
 
   def destroy
+    authorize @booking
     booking = Booking.find(params[:id])
     booking.destroy
   end
@@ -29,7 +34,7 @@
     @locker = Locker.find(params[:locker_id])
     @booking.locker = @locker
     @booking.user = current_user
-
+    authorize @booking
     if @booking.save
       redirect_to "/lockers/:locker_id/bookings", notice: 'Booking was successfully created.'
     else
