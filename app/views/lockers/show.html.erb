@@ -12,13 +12,11 @@
 
     <div class="col">
       <form>
-        <div class="form-group">
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :start_date, as: :datetime,
-                             order: [:day, :month, :year]%>
-            <%= f.input :end_date, as: :datetime,
-                           order: [:day, :month, :year] %>
-            <%= f.button :submit %>
+        <div class="form-group simple">
+          <%= simple_form_for :search, method: "get" do |f| %>
+            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, "Reserve", class: "btn btn-primary" %>
           <% end %>
         </div>
       </form>
