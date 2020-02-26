@@ -24,12 +24,13 @@ class BookingsController < ApplicationController
   end
 
  def create
-    @locker = Locker.find(params[:locker_id])
     @booking = Booking.new(booking_params)
+    @locker = Locker.find(params[:locker_id])
     @booking.locker = @locker
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to @bookings
+      redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
       render 'lockers/show'
     end
