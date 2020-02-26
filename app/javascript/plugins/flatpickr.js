@@ -3,6 +3,5 @@ import "flatpickr/dist/flatpickr.min.css"
 
 flatpickr(".datepicker", {
     enableTime: true,
-    minTime: "09:00"
-
+    minTime: "01:00"
 })
