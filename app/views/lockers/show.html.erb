@@ -12,39 +12,12 @@
 
     <div class="col">
       <form>
-        <div class="form-group">
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First Name">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email-address">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-          <label for="hours-required">Hours Required</label>
-          <select class="form-control" id="hours">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <%= simple_form_for @booking do |f| %>
-            <%= f.input :start_date, as: :datetime,
-                             order: [:day, :month, :year]%>
-            <%= f.input :end_date, as: :datetime,
-                           order: [:day, :month, :year] %>
-            <%= f.button :submit %>
+        <div class="form-group simple">
+          <%= simple_form_for :search, method: "get" do |f| %>
+            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, "Reserve", class: "btn btn-primary" %>
           <% end %>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-primary">Reserve</button>
         </div>
       </form>
     </div>
