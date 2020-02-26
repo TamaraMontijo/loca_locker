@@ -2,10 +2,15 @@
   <div class="row">
     <div class="col">
       <div class="card" style="width: 100%;">
-        <img src="https://source.unsplash.com/8528gpeukK8" class="card-img-top" alt="...">
+        <%= image_tag @locker.photo, class: 'card-img-top' %>
         <div class="card-body">
-          <h5 class="card-title">Lockers Title</h5>
-          <p class="card-text">Locker Description</p>
+              <h5 class="card-title">
+                <%= @locker.address %>
+              </h5>
+              <p class="card-text">
+                <%= @locker.size %> |
+                <%= @locker.price %> €/h
+              </p>
         </div>
       </div>
     </div>
@@ -18,7 +23,7 @@
                              order: [:day, :month, :year]%>
             <%= f.input :end_date, as: :datetime,
                            order: [:day, :month, :year] %>
-            <%= f.button :submit %>
+            <%= f.button :submit, "Booking", class: "btn btn-flat" %>
           <% end %>
         </div>
       </form>
