@@ -1,7 +1,7 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
@@ -25,6 +25,10 @@ class BookingPolicy < ApplicationPolicy
     # user - this is the current user
     # record - this is the restaurant in this case because its a RestaurantPolicy
     user_is_owner?
+  end
+
+  def my_bookings?
+    true
   end
 
   private
