@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :lockers do
     resources :bookings
   end
+
+  get '/my_lockers', to: 'pages#my_lockers'
+  get '/my_bookings', to: 'pages#my_bookings'
 end
