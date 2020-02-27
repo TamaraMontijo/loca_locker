@@ -1,9 +1,14 @@
 class Locker < ApplicationRecord
+
   belongs_to :user
+
 
   validates :address, presence: true
   validates :size, presence: true, inclusion: { in: ['S - W40xH40x40cm','M - W70xH40x70cm','L - W90xH60x90cm'] }
   validates :price, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 
   def get_photo
     if size == 'S - W40xH40x40cm'

@@ -15,6 +15,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'geocoder'
+gem 'nifty-generators', '~> 0.4.6'
+gem 'mocha'
 gem 'pundit'
 
 group :development do

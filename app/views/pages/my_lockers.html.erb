@@ -1,9 +1,15 @@
-<h1>My lockers</h1>
-<br>
-  <ul>
-    <% @lockers.each do |l| %>
-      <li>  <%= l.address %></li>
-      <li>  <%= l.size %></li>
-    <% end %>
-  </ul>
-</br>
+
+<h1>My locker</h1>
+<div class="container">
+<ul>
+<% @lockers.each do |l| %>
+
+<li>  <%= l.address %></li>
+<li>  <%= l.size %></li>
+
+<% end %>
+</ul>
+<%= link_to "Edit", "#", class: "btn btn-flat" %>
+<%= link_to "Delete", "#", class: "btn btn-flat" %>
+</div>
+

@@ -1,14 +1,18 @@
 class LockersController < ApplicationController
-  before_action :set_locker, only: [:show, :edit, :update, :destroy]
+  before_action :set_locker, only: [ :edit, :update, :destroy]
 
   def index
     @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def show
-    @locker = Locker.find(params[:id])
-    @booking = Booking.new
-    authorize @locker
+    @locker = Locker.geocoded.find(params[:id])
+   @booking = Booking.new
+    @markers =
+      {
+        lat: @locker.latitude,
+        lng: @locker.longitude
+      }
   end
 
   def new
@@ -19,10 +23,9 @@ class LockersController < ApplicationController
   def create
     @locker = current_user.lockers.new(locker_params)
     @locker.photo = @locker.get_photo
-    @locker.user = current_user
-    authorize @locker
+    @locker.user_id = current_user.id
     if @locker.save # => false / true
-      redirect_to lockers_path, notice: 'Locker was successfully created.'
+      redirect_to lockers_path, notice: 'Locker was successfully created!'
     else
       render :new
       puts @locker.errors.messages
