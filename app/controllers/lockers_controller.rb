@@ -7,6 +7,7 @@ class LockersController < ApplicationController
 
   def show
     @locker = Locker.geocoded.find(params[:id])
+    authorize @locker
    @booking = Booking.new
     @markers =
       {
@@ -24,6 +25,7 @@ class LockersController < ApplicationController
     @locker = current_user.lockers.new(locker_params)
     @locker.photo = @locker.get_photo
     @locker.user_id = current_user.id
+    authorize @locker
     if @locker.save # => false / true
       redirect_to lockers_path, notice: 'Locker was successfully created!'
     else
