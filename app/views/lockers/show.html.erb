@@ -1,6 +1,6 @@
 <div class="container" id="show">
   <div class="row">
-    <div class="col">
+    <div class="col-lg-6">
       <div class="card" style="width: 100%;">
         <%= image_tag @locker.photo, class: 'card-img-top' %>
         <div class="card-body">
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-lg-6">
         <div class="form-group simple">
           <%= simple_form_for [@locker, @booking], method: "post" do |f| %>
             <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -25,15 +25,16 @@
             <%= f.button :submit, "Reserve", class: "btn btn-flat" %>
           <% end %>
         </div>
+        <div class="row" id="show-map">
+          <div class="col-sm-12 col-lg-6">
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="538" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
     </div>
 
   </div>
 
-  <div class="row" id="show-map">
-    <div class="col">
-      <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="538" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
+
 </div>
