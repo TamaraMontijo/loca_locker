@@ -9,5 +9,11 @@
     top:0;
     height:100%;
     width:100%;
-    position:absolute;
+    position:sticky;
+}
+
+.side-map {
+  height: calc(100vh - 86px);
+  position: sticky;
+  top: 86px;
 }
