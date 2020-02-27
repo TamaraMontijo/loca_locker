@@ -66,3 +66,4 @@ end
     @locker = Locker.find(params[:id])
   end
 end
+#quasre
