@@ -7,7 +7,6 @@
 
   def show
     @booking = Booking.find(booking_params)
-    @locker = Locker.new
     authorize @booking
   end
 
