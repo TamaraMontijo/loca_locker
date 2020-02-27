@@ -48,8 +48,9 @@ class LockersController < ApplicationController
   end
 
   def destroy
+    authorize @locker
     if @locker.destroy
-      redirect_to locker_path, notice: "Flat was successfully destroyed"
+      redirect_to my_lockers_path, notice: "Flat was successfully destroyed"
     else
       puts @locker.errors.messages
     end
