@@ -32,20 +32,27 @@
       <% @bookings.each do |booking| %>
       <th scope="row">1</th>
       <td><%= booking.start_date %></td>
+      <td><%= booking.start_time %></td>
       <td><%= booking.end_date %></td>
+      <td><%= booking.end_time %></td>
       <td></td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td><%= booking.start_date %></td>
+      <td><%= booking.start_time %></td>
       <td><%= booking.end_date %></td>
+      <td><%= booking.end_time %></td>
       <td></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td><%= booking.start_date %></td>
+      <td><%= booking.start_time %></td>
       <td><%= booking.end_date %></td>
+      <td><%= booking.end_time %></td>
       <td></td>
+      <% end %>
     </tr>
   </tbody>
 </div>

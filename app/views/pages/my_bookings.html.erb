@@ -29,8 +29,10 @@
       <% @bookings.each do |booking| %>
         <tr>
           <th scope="row"><%= count %></th>
-          <td> <%= booking.start_date %> </td>
-          <td> <%= booking.end_date %> </td>
+          <td> <%= booking.start_date %>
+               <%= booking.start_time %></td>
+          <td> <%= booking.end_date %>
+               <%= booking.end_time %></td>
           <td> <%= booking.locker.address %></td>
           <td> <%= booking.locker.price %> €/h </td>
         </tr>
