@@ -36,7 +36,7 @@
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to "/lockers/:locker_id/bookings", notice: 'Booking was successfully created.'
+      redirect_to my_bookings_path, notice: 'Booking was successfully created.'
     else
       render 'lockers/show'
     end
