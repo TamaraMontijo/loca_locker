@@ -1,13 +1,29 @@
-<h1>My locker</h1>
 <div class="container">
-<ul>
-<% @lockers.each do |l| %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Address</th>
+        <th scope="col">Size</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
 
-<li>  <%= l.address %></li>
-<li>  <%= l.size %></li>
-
-<% end %>
-</ul>
-<%= link_to "Edit", "#", class: "btn btn-flat" %>
-<%= link_to "Delete", "#", class: "btn btn-flat" %>
+    <tbody>
+      <% count = 1 %>
+      <% @lockers.each do |locker| %>
+        <tr>
+          <th scope="row"><%= count %></th>
+          <td><%= locker.address %> </td>
+          <td><%= locker.size %> </td>
+          <td><%= link_to "Edit", edit_locker_path(locker), class: "btn btn-flat" %></td>
+          <td><%= link_to "Delete", locker, method: :delete, class: "btn btn-flat" %></td>
+        </tr>
+        <% count += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+<!--   <%= link_to "Edit", "#", class: "btn btn-flat" %>
+<%= link_to "Delete", "#", class: "btn btn-flat" %> -->
 </div>
