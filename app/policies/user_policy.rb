@@ -8,5 +8,4 @@ class UserPolicy < ApplicationPolicy
   def profile?
     true
   end
-  #comment
 end

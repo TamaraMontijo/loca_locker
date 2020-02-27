@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get '/my_lockers', to: 'pages#my_lockers'
   get '/my_bookings', to: 'pages#my_bookings'
+  get '/profile', to: 'pages#profile'
 end
