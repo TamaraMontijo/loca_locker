@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :locas
   devise_for :users
 
-  root to: 'lockers#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :lockers do
