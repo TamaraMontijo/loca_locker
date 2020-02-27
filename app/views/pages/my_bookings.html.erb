@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="card">
+<!--   <div class="card">
     <br>
-    <h1>My Bookings (<%= current_user.email %>)</h1>
+    <h2>My Bookings - (<%= current_user.email %>)</h2>
     </br>
     <ul>
       <% @bookings.each do |booking| %>
@@ -10,5 +10,44 @@
         </li>
       <% end %>
     </ul>
-  </div>
+  </div> -->
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+        <th scope="col">Address</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% count = 1 %>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <th scope="row"><%= count %></th>
+          <td> <%= booking.start_date %> </td>
+          <td> <%= booking.end_date %> </td>
+          <td> <%= booking.locker.address %></td>
+          <td> <%= booking.locker.price %> €/h </td>
+        </tr>
+        <% count += 1 %>
+<!--         <tr>
+          <th scope="row">2</th>
+          <td> <%= booking.start_date %> </td>
+          <td> <%= booking.end_date %> </td>
+          <td>X/hours</td>
+        </tr>
+            <tr>
+          <th scope="row">3</th>
+          <td> <%= booking.start_date %> </td>
+          <td> <%= booking.end_date %> </td>
+          <td>X/hours</td>
+        </tr> -->
+      <% end %>
+    </tbody>
+  </table>
 </div>
