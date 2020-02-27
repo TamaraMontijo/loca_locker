@@ -1,8 +1,9 @@
-<ul>
-<% @lockers.each do |l| %>
-
-<li>  <%= l.address %></li>
-<li>  <%= l.size %></li>
-
-<% end %>
-</ul>
+<h1>My lockers</h1>
+<br>
+  <ul>
+    <% @lockers.each do |l| %>
+      <li>  <%= l.address %></li>
+      <li>  <%= l.size %></li>
+    <% end %>
+  </ul>
+</br>

@@ -13,4 +13,9 @@ class PagesController < ApplicationController
     @lockers = current_user.lockers
     authorize @lockers
   end
+
+  def profile
+   @user = current_user
+   authorize @user
+  end
 end
