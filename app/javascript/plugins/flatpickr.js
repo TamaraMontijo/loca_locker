@@ -5,5 +5,5 @@ require("flatpickr/dist/themes/material_green.css");
 flatpickr(".datepicker", {
     enableTime: true,
     minTime: "01:00",
-    altInput: true,
+    altInput: true
 })
