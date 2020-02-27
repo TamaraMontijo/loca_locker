@@ -24,7 +24,7 @@ class LockersController < ApplicationController
     @locker.photo = @locker.get_photo
     @locker.user_id = current_user.id
     if @locker.save # => false / true
-      redirect_to lockers_path, notice: 'Locker was successfully created.'
+      redirect_to lockers_path, notice: 'Locker was successfully created!'
     else
       render :new
       puts @locker.errors.messages
