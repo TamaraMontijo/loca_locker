@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:home, :index]
+  # skip_before_action :authenticate_user!, only: :home
+  skip_after_action :verify_authorized, only: :home
 
   def home
+    @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def my_bookings

@@ -8,7 +8,7 @@ class LockersController < ApplicationController
   def show
     @locker = Locker.geocoded.find(params[:id])
     authorize @locker
-   @booking = Booking.new
+    @booking = Booking.new
     @markers =
       {
         lat: @locker.latitude,
