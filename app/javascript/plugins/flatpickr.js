@@ -7,3 +7,12 @@ flatpickr(".datepicker", {
     minTime: "01:00",
     altInput: true
 })
+
+flatpickr(".timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+})
+
+
