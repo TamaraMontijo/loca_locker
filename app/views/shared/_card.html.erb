@@ -3,7 +3,7 @@
     <%= link_to locker_path(locker) do %>
     <div class="card-category" id="small-locker" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= locker.photo %>)">
       <div class="d-flex justify-content-sm-center flex-column ">
-        <h1><%= locker.address %></h1>
+        <h2><%= locker.address %></h2>
         <p><%= locker.price %> €/h</p>
         <p><%= locker.size %></p>
       </div>
