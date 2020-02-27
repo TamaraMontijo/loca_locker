@@ -19,6 +19,7 @@ gem 'geocoder'
 gem 'nifty-generators', '~> 0.4.6'
 gem 'mocha'
 gem 'pundit'
+gem 'gravatar_image_tag'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

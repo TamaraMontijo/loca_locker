@@ -14,16 +14,13 @@
 
     <% if user_signed_in? %>
 
-        <li class="nav-item active">
-        <%= link_to "Add Locker", new_locker_path, class: "nav-link" %>
-        </li>
-
       <li class="nav-item dropdown">
         <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1580586175/ntpyaym6fuq3mq3ktv3t.jpg", class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "User", profile_path, class: "dropdown-item" %>
-          <%= link_to "My Lockers", my_lockers_path, class: "dropdown-item" %>
+          <%= link_to "Profile", profile_path, class: "dropdown-item" %>
           <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item" %>
+          <%= link_to "My Lockers", my_lockers_path, class: "dropdown-item" %>
+          <%= link_to "Add Locker", new_locker_path, class: "dropdown-item" %>
           <%= link_to "Logout", destroy_user_session_path,  method: :delete, class: "dropdown-item" %>
         </div>
       </li>

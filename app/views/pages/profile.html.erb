@@ -1,1 +1,40 @@
+<div class="container">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-3">
+      <div class="text-center">
+        <%= gravatar_image_tag(current_user.email, :alt => current_user.first_name) %>
+      </div>
+    </div>
 
+    <div class="col-md-9 personal-info">
+      <h5><u>Your Details</u></h5>
+      <br />
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <p><u>First Name</u></p>
+          <%= current_user.first_name %>
+        </div>
+        <hr>
+
+        <div class="form-group">
+          <p><u>Last Name</u></p>
+          <%= current_user.last_name %>
+        </div>
+        <hr>
+
+        <div class="form-group">
+          <p><u>Email</u></p>
+          <%= current_user.email %>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <a href="users/edit" class="btn btn-info" role="button"><strong>Edit Details</strong></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr>
