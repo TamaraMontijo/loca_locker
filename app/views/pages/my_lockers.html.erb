@@ -1,3 +1,5 @@
+<h1>My locker</h1>
+<div class="container">
 <ul>
 <% @lockers.each do |l| %>
 
@@ -6,3 +8,6 @@
 
 <% end %>
 </ul>
+<%= link_to "Edit", "#", class: "btn btn-flat" %>
+<%= link_to "Delete", "#", class: "btn btn-flat" %>
+</div>
