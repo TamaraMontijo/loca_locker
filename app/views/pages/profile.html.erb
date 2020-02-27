@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-3">
       <div class="text-center">
-        <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1580586175/ntpyaym6fuq3mq3ktv3t.jpg" %>
+        <%= gravatar_image_tag(current_user.email, :alt => current_user.first_name) %>
       </div>
     </div>
 
