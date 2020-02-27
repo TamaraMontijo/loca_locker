@@ -18,6 +18,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'nifty-generators', '~> 0.4.6'
 gem 'mocha'
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

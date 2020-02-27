@@ -1,12 +1,11 @@
-<h1>New locker</h1>
-
-
+<br>
 <div class="container">
+  <h1>Add locker</h1>
   <%= simple_form_for @locker do |f| %>
     <%= f.input :address %>
-    <%= f.input :size, collection: ['S','M','L'] %>
+    <%= f.input :size, collection: ['S - W40xH40x40cm','M - W70xH40x70cm','L - W90xH60x90cm'] %>
     <%= f.input :price, label: 'Price per hour', input_html: {min: "1"}%>
-    <%= f.button :submit %>
+    <%= f.button :submit,"Create Locker", class: "btn btn-flat" %>
 <% end %>
 
 </div>

@@ -2,7 +2,7 @@ class LockersController < ApplicationController
   before_action :set_locker, only: [ :edit, :update, :destroy]
 
   def index
-    @lockers = Locker.all
+    @lockers = policy_scope(Locker).order(created_at: :desc)
   end
 
   def show
@@ -16,11 +16,12 @@ class LockersController < ApplicationController
   end
 
   def new
-    @locker = Locker.new
+    @locker = current_user.lockers.new
+    authorize @locker
   end
 
   def create
-    @locker= Locker.new(locker_params)
+    @locker = current_user.lockers.new(locker_params)
     @locker.photo = @locker.get_photo
     @locker.user_id = current_user.id
     if @locker.save # => false / true
@@ -32,9 +33,11 @@ class LockersController < ApplicationController
   end
 
   def edit
+    authorize @locker
   end
 
   def update
+    authorize @locker
     if @locker.update(locker_params)
       redirect_to locker_path(@locker)
     else
