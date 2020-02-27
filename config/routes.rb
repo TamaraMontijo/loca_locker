@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :locas
   devise_for :users
 
   root to: 'lockers#index'
