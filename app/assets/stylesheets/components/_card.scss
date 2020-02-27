@@ -46,11 +46,15 @@
 }
 
 #card-index {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 12px
+  padding: 0 0 0 20px;
 }
 
 .form-group {
-  margin-right: 20px;
+  margin-right: 30px;
+}
+
+.form-control {
+  padding: 0.375rem 7.90rem;
 }
