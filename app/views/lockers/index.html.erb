@@ -2,11 +2,11 @@
 <title>new Loca Lockers index</title>
 </head>
 
+
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-6" id="card-index">
       <%= render 'shared/card' %>
     </div>
-
     <div class="col-sm-12 col-lg-6">
       <div
         id="map"
@@ -15,8 +15,16 @@
         margin-top: 37px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<!--       <div class="sidemap">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 800px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div> -->
       </div>
-    </div>
+  </div>
 </div>
 
 

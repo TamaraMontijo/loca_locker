@@ -9,5 +9,18 @@
     top:0;
     height:100%;
     width:100%;
-    position:absolute;
+    position:sticky;
 }
+
+.side-map {
+  height: calc(100vh - 86px);
+  position: sticky;
+  top: 86px;
+}
+.mapboxgl-marker {
+  background-image: url('https://image.flaticon.com/icons/svg/2598/2598549.svg');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;

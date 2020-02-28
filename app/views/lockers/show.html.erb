@@ -17,13 +17,18 @@
         </div>
       </div>
     </div>
+
     <div class="col-sm-12 col-lg-6">
-        <div class="form-group simple">
+        <div class="d-flex justify-content-between">
           <%= simple_form_for [@locker, @booking], method: "post" do |f| %>
+          <div class="d-flex">
             <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :start_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+            </div>
+            <div class="d-flex justify-content-between">
             <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
+            </div>
             <%= f.button :submit, "Reserve", class: "btn btn-flat" %>
           <% end %>
         </div>
@@ -41,6 +46,13 @@
   style="width: 90%;
   height: 200px;"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  </div>
+    </div>
+
+
+</div>
+</div>
 </div>
  -->

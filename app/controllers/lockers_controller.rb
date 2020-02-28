@@ -3,6 +3,11 @@ class LockersController < ApplicationController
 
   def index
     @lockers = policy_scope(Locker).order(created_at: :desc)
+    @markers = @lockers.map do |locker| {
+      lat: locker.latitude,
+      lng: locker.longitude,
+    }
+    end
   end
 
   def show
