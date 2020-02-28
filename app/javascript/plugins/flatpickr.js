@@ -4,9 +4,9 @@ require("flatpickr/dist/themes/material_green.css");
 
 const flat = () => {
   flatpickr(".datepicker", {
-    enableTime: true,
-    minTime: "01:00",
-    altInput: true
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
 })
 
 flatpickr(".timepicker", {

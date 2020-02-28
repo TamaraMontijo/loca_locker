@@ -2,11 +2,19 @@ class LockersController < ApplicationController
   before_action :set_locker, only: [ :edit, :update, :destroy]
 
   def index
-    @lockers = policy_scope(Locker).order(created_at: :desc)
-    @markers = @lockers.map do |locker| {
-      lat: locker.latitude,
-      lng: locker.longitude,
-    }
+    #@lockers = Locker.geocoded
+
+    if params[:search][:query]
+      @lockers = policy_scope(Locker).where("address ILIKE '%#{params[:search][:query]}%'").geocoded
+    else
+      @lockers = policy_scope(Locker).order(created_at: :desc).geocoded
+    end
+
+    @markers = @lockers.map do |locker|
+      {
+        lat: locker.latitude,
+        lng: locker.longitude
+      }
     end
   end
 
@@ -56,7 +64,7 @@ class LockersController < ApplicationController
   def destroy
     authorize @locker
     if @locker.destroy
-      redirect_to my_lockers_path, notice: "Flat was successfully destroyed"
+      redirect_to my_lockers_path, notice: "Locker was successfully destroyed"
     else
       puts @locker.errors.messages
     end
