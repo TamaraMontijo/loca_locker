@@ -3,6 +3,11 @@ class LockersController < ApplicationController
 
   def index
     @lockers = policy_scope(Locker).order(created_at: :desc)
+    @markers = @lockers.map do |locker| {
+      lat: locker.latitude,
+      lng: locker.longitude,
+    }
+    end
   end
 
   def show
@@ -44,6 +49,7 @@ class LockersController < ApplicationController
       redirect_to locker_path(@locker)
     else
       puts @locker.errors.messages
+      render :edit
     end
   end
 
@@ -60,7 +66,7 @@ class LockersController < ApplicationController
 
   def locker_params
     params.require(:locker).permit(:size, :price, :address, :photo)
-end
+  end
 
   def set_locker
     @locker = Locker.find(params[:id])

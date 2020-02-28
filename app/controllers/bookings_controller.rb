@@ -12,20 +12,22 @@
 
   def edit
     @booking = Booking.find(params[:id])
+    @locker = Locker.find(params[:locker_id])
     authorize @booking
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
     authorize @booking
-    @booking.update(restaurant_params)
-
-    redirect_to @bookings
+    redirect_to my_bookings_path
   end
 
   def destroy
+    @booking = Booking.where(user_id: current_user.id).first
     authorize @booking
-    booking = Booking.find(params[:id])
-    booking.destroy
+    @booking.destroy
+    redirect_to my_bookings_destroy_path
   end
 
  def create
