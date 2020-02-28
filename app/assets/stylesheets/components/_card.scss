@@ -43,19 +43,11 @@
 }
 
 .cards {
-  padding: 0 20px 0 20px;
+  padding: 0 0 0 20px;
 }
 
 #card-index {
   display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0 0 0 20px;
-}
-
-.form-group {
-  margin-right: 30px;
-}
-
-.form-control {
-  padding: 0.375rem 7.90rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px
 }

@@ -23,9 +23,10 @@
   end
 
   def destroy
+    @booking = Booking.where(user_id: current_user.id).first
     authorize @booking
-    booking = Booking.find(params[:id])
-    booking.destroy
+    @booking.destroy
+    redirect_to my_bookings_destroy_path
   end
 
  def create
