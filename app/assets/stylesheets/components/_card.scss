@@ -42,11 +42,11 @@
 }
 
 .cards {
-  padding: 0 20px 0 20px;
+  padding: 0 0 0 20px;
 }
 
 #card-index {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  grid-template-columns: 1fr 1fr;
   padding: 12px
 }

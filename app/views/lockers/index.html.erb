@@ -3,7 +3,7 @@
 </head>
 
   <div class="row">
-    <div class="col-lg-6" id="card-index">
+    <div class="col-sm-12 col-md-8 col-lg-6" id="card-index">
       <%= render 'shared/card' %>
     </div>
 
@@ -12,7 +12,7 @@
         id="map"
         style="width: 98%;
         height: 600px;
-        margin-top: 20px;"
+        margin-top: 37px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
