@@ -4,7 +4,7 @@ class LockersController < ApplicationController
   def index
     #@lockers = Locker.geocoded
 
-    if params[:search][:query]
+    if params[:search].present? && params[:search][:query].present?
       @lockers = policy_scope(Locker).where("address ILIKE '%#{params[:search][:query]}%'").geocoded
     else
       @lockers = policy_scope(Locker).order(created_at: :desc).geocoded
