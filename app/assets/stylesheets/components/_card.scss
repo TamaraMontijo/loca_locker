@@ -46,11 +46,16 @@
   padding: 0 20px 0 20px;
 }
 
-.cards-1-colum {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  padding: 16px;
-  flex-grow: 1;
-  text-decoration: none;
+#card-index {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 0 0 20px;
+}
+
+.form-group {
+  margin-right: 30px;
+}
+
+.form-control {
+  padding: 0.375rem 7.90rem;
 }

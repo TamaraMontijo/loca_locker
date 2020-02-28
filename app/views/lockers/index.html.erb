@@ -11,14 +11,21 @@
       </div>
     </div>
     <div class="col-sm-12 col-lg-6">
-      <div class="sidemap">
+      <div
+        id="map"
+        style="width: 98%;
+        height: 800px;
+        margin-top: 20px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<!--       <div class="sidemap">
         <div
           id="map"
           style="width: 100%;
           height: 800px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        </div>
+        </div> -->
       </div>
   </div>
 </div>
