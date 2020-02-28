@@ -13,3 +13,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
   delete '/my_bookings', to: 'bookings#destroy', as: 'my_bookings_destroy'
 end
+
+#comentenando mais
