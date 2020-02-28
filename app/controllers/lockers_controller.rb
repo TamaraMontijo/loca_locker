@@ -54,6 +54,8 @@ class LockersController < ApplicationController
   def update
     authorize @locker
     if @locker.update(locker_params)
+      @locker.photo = @locker.get_photo
+      @locker.save
       redirect_to locker_path(@locker)
     else
       puts @locker.errors.messages
